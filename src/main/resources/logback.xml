@@ -25,6 +25,10 @@
         <appender-ref ref="STDOUT"/>
     </logger>
 
+    <logger name="io.netty.handler.logging" level="DEBUG" additivity="false"> <!--additivity =【true：反馈到<root 里面打印或者写出日志，false：不反馈】-->
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
     <root level="ERROR">
         <appender-ref ref="STDOUT"/>
     </root>
