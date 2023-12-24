@@ -1,4 +1,4 @@
-package com.cchangy.netty.components.eventloop;
+package com.cchangy.netty.channel;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelHandlerContext;

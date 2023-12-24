@@ -1,4 +1,4 @@
-package com.cchangy.netty.components.eventloop;
+package com.cchangy.netty.channel;
 
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
