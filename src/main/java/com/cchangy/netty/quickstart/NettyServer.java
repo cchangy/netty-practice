@@ -1,4 +1,4 @@
-package com.cchangy.netty.simple;
+package com.cchangy.netty.quickstart;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelHandlerContext;

@@ -1,12 +1,10 @@
 package com.cchangy.netty.channel;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelInitializer;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
@@ -34,6 +32,7 @@ public class EventLoopClient {
                     protected void initChannel(Channel channel) throws Exception {
                         channel.pipeline().addLast(new LoggingHandler(LogLevel.DEBUG));
                         channel.pipeline().addLast(new StringEncoder());
+                        channel.pipeline().addLast(new StringDecoder());
                     }
                 });
 
@@ -44,14 +43,14 @@ public class EventLoopClient {
         ChannelFuture channelFuture = bootstrap.connect(new InetSocketAddress("localhost", 8899));
 
         // 同步发消息
-        // syncWrite(channelFuture);
+        syncWrite(channelFuture);
         // 异步发消息
-        asyncWrite(channelFuture);
+        // asyncWrite(channelFuture);
 
         // 同步关闭
         // syncClose(channelFuture);
         // 异步关闭
-        asyncClose(channelFuture, group);
+        // asyncClose(channelFuture, group);
     }
 
     /**
