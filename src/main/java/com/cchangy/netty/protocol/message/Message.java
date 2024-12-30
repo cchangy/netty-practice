@@ -33,7 +33,7 @@ public abstract class Message implements Serializable {
     private static Map<Integer, Class<?>> MESSAGE_CLASS_MAP = new HashMap<>();
 
     static {
-
+        MESSAGE_CLASS_MAP.put(LOGIN_REQUEST_MESSAGE, LoginRequestMessage.class);
     }
 
     public static Class<?> getMessageClass(int messageType) {
